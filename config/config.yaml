@@ -1,0 +1,14 @@
+# ─── Rutas ────────────────────────────────────────────────────────────
+paths:
+  data_raw: "data/raw/studentmat.csv"
+  data_processed: "data/processed/"
+  models: "models/"
+  reports: "reports/"
+
+# ─── Reproducibilidad ──────────────────────────────────────────────────
+random_seed: 42
+
+# ─── Datos ────────────────────────────────────────────────────────────
+data:
+  expected_rows_min: 1000      # mínimo de filas válidas
+  expected_columns: 21          # columnas que debe tener el CSV crudo
