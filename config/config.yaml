@@ -10,5 +10,47 @@ random_seed: 42
 
 # ─── Datos ────────────────────────────────────────────────────────────
 data:
-  expected_rows_min: 1000      # mínimo de filas válidas
-  expected_columns: 21          # columnas que debe tener el CSV crudo
+  expected_rows_min: 1000
+  expected_columns: 21
+
+# ─── Features ─────────────────────────────────────────────────────────
+features:
+  # Columnas a eliminar (justificadas en el EDA del TIA2/TIA3)
+  drop_columns:
+    - student_id          # solo es identificador
+    - age                 # correlación ~ -0.01 con exam_score
+    - gender              # sin diferencia por boxplots
+    - academic_level      # sin diferencia por boxplots
+    - internet_quality    # sin impacto en la nota
+    - online_classes_hours  # correlación ~ 0.00
+    - gaming_hours        # correlación ~ -0.05
+
+  # Variables que entran al modelo
+  feature_columns:
+    - study_hours
+    - self_study_hours
+    - social_media_hours
+    - sleep_hours
+    - screen_time_hours
+    - exercise_minutes
+    - caffeine_intake_mg
+    - part_time_job
+    - upcoming_deadline
+    - mental_health_score
+    - focus_index
+    - burnout_level
+    - productivity_score
+
+  # Columna numérica original (no entra al modelo, se usa para crear el target)
+  source_score_column: exam_score
+
+# ─── Target ───────────────────────────────────────────────────────────
+target:
+  name: aprobado
+  source: exam_score
+  # Estrategia de binarización:
+  #   "median"  -> umbral = mediana del exam_score (lo que usaste en TIA3)
+  #   "fixed"   -> umbral fijo (ej. 18.0)
+  strategy: median
+  fixed_threshold: 18.0   # solo se usa si strategy = "fixed"
+  positive_class_label: 1   # 1 = aprobado, 0 = reprobado
