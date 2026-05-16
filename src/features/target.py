@@ -6,7 +6,7 @@ Soporta dos estrategias: mediana del propio dataset o umbral fijo.
 """
 from typing import Literal
 
-import pandas as pds
+import pandas as pd
 from loguru import logger
 
 Strategy = Literal["median", "fixed"]

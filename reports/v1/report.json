@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-16T16:26:47",
+    "n_test_samples": 1000,
+    "class_names": [
+      "Reprueba",
+      "Aprueba"
+    ]
+  },
+  "metrics": {
+    "accuracy": 0.842,
+    "precision": 0.8250950570342205,
+    "recall": 0.868,
+    "f1": 0.8460038986354775
+  },
+  "confusion_matrix": {
+    "matrix": [
+      [
+        408,
+        92
+      ],
+      [
+        66,
+        434
+      ]
+    ],
+    "tn": 408,
+    "fp": 92,
+    "fn": 66,
+    "tp": 434
+  },
+  "roc": {
+    "auc": 0.9328560000000001
+  },
+  "classification_report": {
+    "Reprueba": {
+      "precision": 0.8607594936708861,
+      "recall": 0.816,
+      "f1-score": 0.837782340862423,
+      "support": 500.0
+    },
+    "Aprueba": {
+      "precision": 0.8250950570342205,
+      "recall": 0.868,
+      "f1-score": 0.8460038986354775,
+      "support": 500.0
+    },
+    "accuracy": 0.842,
+    "macro avg": {
+      "precision": 0.8429272753525533,
+      "recall": 0.842,
+      "f1-score": 0.8418931197489503,
+      "support": 1000.0
+    },
+    "weighted avg": {
+      "precision": 0.8429272753525534,
+      "recall": 0.842,
+      "f1-score": 0.8418931197489503,
+      "support": 1000.0
+    }
+  },
+  "feature_importances": [
+    {
+      "feature": "productivity_score",
+      "importance": 0.9035072866226449
+    },
+    {
+      "feature": "burnout_level",
+      "importance": 0.046277972408393805
+    },
+    {
+      "feature": "focus_index",
+      "importance": 0.023602954897707033
+    },
+    {
+      "feature": "exercise_minutes",
+      "importance": 0.005918571066470584
+    },
+    {
+      "feature": "screen_time_hours",
+      "importance": 0.004856911483876022
+    },
+    {
+      "feature": "sleep_hours",
+      "importance": 0.0034571760777382023
+    },
+    {
+      "feature": "caffeine_intake_mg",
+      "importance": 0.003391162726671473
+    },
+    {
+      "feature": "self_study_hours",
+      "importance": 0.003377531475107056
+    },
+    {
+      "feature": "mental_health_score",
+      "importance": 0.0026891944992924553
+    },
+    {
+      "feature": "study_hours",
+      "importance": 0.0022402545911461113
+    },
+    {
+      "feature": "social_media_hours",
+      "importance": 0.000680984150952387
+    },
+    {
+      "feature": "part_time_job",
+      "importance": 0.0
+    },
+    {
+      "feature": "upcoming_deadline",
+      "importance": 0.0
+    }
+  ],
+  "artifacts": {
+    "confusion_matrix": "confusion_matrix.png",
+    "roc_curve": "roc_curve.png",
+    "feature_importances": "feature_importances.png"
+  }
+}
