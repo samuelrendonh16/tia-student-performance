@@ -1,7 +1,13 @@
 ﻿"""Script de entrenamiento del modelo."""
+import sys
+from datetime import datetime
 from pathlib import Path
 
+import imblearn
 import joblib
+import numpy
+import pandas
+import sklearn
 from loguru import logger
 
 from src.data.loader import load_raw_data
@@ -81,17 +87,36 @@ def train(config_path=None) -> dict:
     models_dir.mkdir(parents=True, exist_ok=True)
     artifact_path = models_dir / cfg["model"]["artifact_name"]
 
-    joblib.dump(
-        {
-            "pipeline": pipeline,
-            "feature_columns": cfg["features"]["feature_columns"],
-            "target_column": cfg["target"]["name"],
-            "threshold": threshold,
-            "random_seed": cfg["random_seed"],
+    artefacto = {
+        "pipeline": pipeline,
+        "feature_columns": cfg["features"]["feature_columns"],
+        "target_column": cfg["target"]["name"],
+        "threshold": threshold,
+        "random_seed": cfg["random_seed"],
+        "metadata": {
+            "python": sys.version,
+            "sklearn": sklearn.__version__,
+            "numpy": numpy.__version__,
+            "pandas": pandas.__version__,
+            "imblearn": imblearn.__version__,
+            "joblib": joblib.__version__,
+            "fecha_entrenamiento": datetime.now().isoformat(timespec="seconds"),
+            "modelo": "DecisionTreeClassifier",
+            "tipo": "clasificacion_binaria",
+            "hiperparametros": cfg["model"]["decision_tree"],
+            "balanceo": "SMOTE" if cfg["model"]["smote"]["enabled"] else "ninguno",
+            "n_train": int(len(X_train)),
+            "n_test": int(len(X_test)),
+            "metricas_test": {
+                "accuracy_train": float(train_score),
+                "accuracy_test": float(test_score),
+            },
         },
-        artifact_path,
-    )
+    }
+
+    joblib.dump(artefacto, artifact_path, compress=3)
     logger.info(f"Modelo guardado en: {artifact_path}")
+    logger.info(f"  -> Tamano: {artifact_path.stat().st_size / 1024:.1f} KB")
 
     logger.info("=" * 60)
     logger.info("ENTRENAMIENTO COMPLETADO")

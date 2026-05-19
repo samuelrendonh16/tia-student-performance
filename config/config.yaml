@@ -85,3 +85,22 @@ evaluation:
     figsize_confusion: [6, 5]
     figsize_roc: [7, 6]
     figsize_importance: [9, 6]
+
+
+# ─── Prescriptiva ─────────────────────────────────────────────────────
+prescriptive:
+  # Umbrales de cada regla de negocio (RN-01 a RN-05)
+  rules:
+    study_hours_min: 4          # RN-01: si study_hours < este valor
+    burnout_max: 60             # RN-02: si burnout_level > este valor
+    mental_health_min: 5        # RN-03: si mental_health_score < este valor
+    distractions_max: 4         # RN-04: si social_media + gaming > este valor
+    sleep_hours_min: 6          # RN-05: si sleep_hours < este valor
+
+  # Subcarpeta dentro de reports/ donde se guardan los outputs
+  output_subdir: "v1"
+
+  # Configuracion de la grafica
+  figures:
+    dpi: 100
+    figsize_coverage: [10, 5]
