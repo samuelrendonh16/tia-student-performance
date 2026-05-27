@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-05-16T16:26:47",
+    "generated_at": "2026-05-27T10:36:14",
     "n_test_samples": 1000,
     "class_names": [
       "Reprueba",
@@ -8,101 +8,97 @@
     ]
   },
   "metrics": {
-    "accuracy": 0.842,
-    "precision": 0.8250950570342205,
-    "recall": 0.868,
-    "f1": 0.8460038986354775
+    "accuracy": 0.86,
+    "precision": 0.8629032258064516,
+    "recall": 0.856,
+    "f1": 0.8594377510040161
   },
   "confusion_matrix": {
     "matrix": [
       [
-        408,
-        92
+        432,
+        68
       ],
       [
-        66,
-        434
+        72,
+        428
       ]
     ],
-    "tn": 408,
-    "fp": 92,
-    "fn": 66,
-    "tp": 434
+    "tn": 432,
+    "fp": 68,
+    "fn": 72,
+    "tp": 428
   },
   "roc": {
-    "auc": 0.9328560000000001
+    "auc": 0.943786
   },
   "classification_report": {
     "Reprueba": {
-      "precision": 0.8607594936708861,
-      "recall": 0.816,
-      "f1-score": 0.837782340862423,
+      "precision": 0.8571428571428571,
+      "recall": 0.864,
+      "f1-score": 0.8605577689243028,
       "support": 500.0
     },
     "Aprueba": {
-      "precision": 0.8250950570342205,
-      "recall": 0.868,
-      "f1-score": 0.8460038986354775,
+      "precision": 0.8629032258064516,
+      "recall": 0.856,
+      "f1-score": 0.8594377510040161,
       "support": 500.0
     },
-    "accuracy": 0.842,
+    "accuracy": 0.86,
     "macro avg": {
-      "precision": 0.8429272753525533,
-      "recall": 0.842,
-      "f1-score": 0.8418931197489503,
+      "precision": 0.8600230414746544,
+      "recall": 0.86,
+      "f1-score": 0.8599977599641595,
       "support": 1000.0
     },
     "weighted avg": {
-      "precision": 0.8429272753525534,
-      "recall": 0.842,
-      "f1-score": 0.8418931197489503,
+      "precision": 0.8600230414746542,
+      "recall": 0.86,
+      "f1-score": 0.8599977599641594,
       "support": 1000.0
     }
   },
   "feature_importances": [
     {
       "feature": "productivity_score",
-      "importance": 0.9035072866226449
+      "importance": 0.8926939178133034
     },
     {
       "feature": "burnout_level",
-      "importance": 0.046277972408393805
+      "importance": 0.07316522165392708
     },
     {
       "feature": "focus_index",
-      "importance": 0.023602954897707033
-    },
-    {
-      "feature": "exercise_minutes",
-      "importance": 0.005918571066470584
-    },
-    {
-      "feature": "screen_time_hours",
-      "importance": 0.004856911483876022
-    },
-    {
-      "feature": "sleep_hours",
-      "importance": 0.0034571760777382023
-    },
-    {
-      "feature": "caffeine_intake_mg",
-      "importance": 0.003391162726671473
-    },
-    {
-      "feature": "self_study_hours",
-      "importance": 0.003377531475107056
-    },
-    {
-      "feature": "mental_health_score",
-      "importance": 0.0026891944992924553
-    },
-    {
-      "feature": "study_hours",
-      "importance": 0.0022402545911461113
+      "importance": 0.02943552094997421
     },
     {
       "feature": "social_media_hours",
-      "importance": 0.000680984150952387
+      "importance": 0.0024500698148453
+    },
+    {
+      "feature": "caffeine_intake_mg",
+      "importance": 0.002255269767950084
+    },
+    {
+      "feature": "study_hours",
+      "importance": 0.0
+    },
+    {
+      "feature": "self_study_hours",
+      "importance": 0.0
+    },
+    {
+      "feature": "sleep_hours",
+      "importance": 0.0
+    },
+    {
+      "feature": "screen_time_hours",
+      "importance": 0.0
+    },
+    {
+      "feature": "exercise_minutes",
+      "importance": 0.0
     },
     {
       "feature": "part_time_job",
@@ -110,6 +106,10 @@
     },
     {
       "feature": "upcoming_deadline",
+      "importance": 0.0
+    },
+    {
+      "feature": "mental_health_score",
       "importance": 0.0
     }
   ],
